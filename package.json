@@ -1,0 +1,19 @@
+{
+  "name": "energy-ds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "clay-base-sdk": "0.0.59",
+    "clay-client": "^0.2.1",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}

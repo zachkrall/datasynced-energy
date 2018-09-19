@@ -61,9 +61,9 @@
         if( values.length == 0){
           newvalues = 0;
         } else {
-          newvalues = values.reduce(function (accumulator, currentValue) {
+          newvalues = Math.ceil( values.reduce(function (accumulator, currentValue) {
             return accumulator + currentValue;
-          }, 0) / values.length * 100;
+          }, 0) / values.length * 100 );
         }
 
         function add(a, b){

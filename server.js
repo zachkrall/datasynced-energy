@@ -45,7 +45,7 @@ app.get('/view', function(request, response){
 
 });
 
-app.get('*ha', function(request, response){
+app.get('*', function(request, response){
   response.send('Error 404');
 });
 

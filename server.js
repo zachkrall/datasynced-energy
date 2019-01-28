@@ -13,13 +13,13 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use( express.static('public') );
 
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.post('/result', function(request, response){
+app.post('/submit', function(request, response){
 
   var value;
 
@@ -35,13 +35,34 @@ app.post('/result', function(request, response){
     amount: value
   });
 
-  response.render('results', { title: 'Hello', message: 'you decided to ' + request.body.action + ' energy' });
+  var actionPhrase;
+  if ( request.body.action == 'give' ){
+    actionPhrase = 'sent energy';
+  } else if ( request.body.action == 'take' ){
+    actionPhrase = 'reserved energy'
+  } else {
+    actionPhrase = 'opted out'
+  }
+
+  response.render('submit', { title: 'Hello', message: 'You have ' + actionPhrase });
+
+});
+
+app.get('/submit', function(request, response){
+
+  response.redirect('/');
+
+});
+
+app.get('/test', function(request, response){
+
+  response.render('submit', { title: 'Hello', message: 'You have sent energy' });
 
 });
 
 app.get('/view', function(request, response){
 
-  response.sendFile(__dirname + '/views/results.html');
+  response.sendFile(__dirname + '/views/view.html');
 
 });
 

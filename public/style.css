@@ -1,0 +1,92 @@
+*{
+  margin:0;padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background:#111;
+  font-family:sans-serif;
+  color:#fff;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#717f7f+0,2c3534+48,292929+100 */
+  background: #717f7f; /* Old browsers */
+  background: -moz-linear-gradient(left, #717f7f 0%, #2c3534 48%, #292929 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #717f7f 0%,#2c3534 48%,#292929 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #717f7f 0%,#2c3534 48%,#292929 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#717f7f', endColorstr='#292929',GradientType=1 ); /* IE6-9 */
+
+}
+
+body#body_start form{
+
+  display:flex;
+  align-items: center;
+
+}
+
+body#body_start form input[type='radio']{
+  display:none;
+}
+
+#divider{
+  height:80vh;
+  width:2px;
+  background:#fff;
+}
+
+#take_energy,
+#give_energy{
+  width:50vw;
+  min-height:100vh;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+#take_energy *,
+#give_energy *{
+  cursor:pointer;
+}
+#take_energy label,
+#give_energy label{
+  border:2px solid #fff;
+  width:25vw;
+  height:25vw;
+  line-height:25vw;
+  text-align:center;
+  border-radius:50%;
+  text-transform:uppercase;
+  letter-spacing:1pt;
+  transition: 2s all ease;
+
+  overflow: hidden;
+}
+#take_energy label:hover,
+#give_energy label:hover{
+  /* transition: 2s all ease;
+  background:cyan;
+  color:#111;
+  box-shadow: 0px 0px 20px cyan; */
+}
+
+body#body_start form input[type='submit']{
+  display:none;
+}
+
+body#body_sent,
+body#body_results{
+  width:100vw;min-height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+body#body_sent h1{
+  font-weight:normal;
+  font-size:1.5rem;
+  text-transform:uppercase;
+  letter-spacing:1pt;
+}
+
+#results_container{
+  font-size:1.5rem;
+}

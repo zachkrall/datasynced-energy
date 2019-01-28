@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title>Testing</title>
 
-    <style>
-      body{
-        font-size:14pt;
-      }
-    </style>
-  </head>
-  <body>
+    <link rel="stylesheet" href="/style.css" type="text/css">
 
-    <form method="POST" action="/result">
-      <input type="radio" value="take" name="action" id="form_option_take">
-      <label for="form_option_take">Take Energy</label>
-<br><br>
-      <input type="radio" value="give" name="action" id="form_option_give">
-      <label for="form_option_give">Give Energy</label>
-<br><br>
+  </head>
+  <body id="body_start">
+
+    <form id="myform" method="POST" action="/submit">
+
+      <div id="give_energy">
+        <input type="radio" value="give" name="action" id="form_option_give">
+        <label for="form_option_give">Send Energy</label>
+      </div>
+
+      <div id="divider"></div>
+
+      <div id="take_energy">
+        <input type="radio" value="take" name="action" id="form_option_take">
+        <label for="form_option_take">Reserve Energy</label>
+      </div>
+
       <input type="submit">
     </form>
 
+  <script type="text/javascript">
+    var elements = Array.from( document.getElementsByTagName('input') );
+    elements.map( function(){
+      this.onclick = function(e){
+        // e.preventDefault();
+        let date = new Date();
+        console.log('ok ' + date.getTime() );
+
+        // give system time to check input selection?
+        setTimeout(function(){
+          document.getElementById('myform').submit();
+        }, 10);
+
+      };
+    });
+  </script>
   </body>
 </html>
